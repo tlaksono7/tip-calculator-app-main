@@ -1,0 +1,98 @@
+/* CSS Minimize Reset */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* End CSS Minimize Reset */
+
+* {
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+    font-size: 1em;
+}
+
+.content {
+    display: block;
+    margin-bottom: 65px;
+}
+
+.page-heading {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.calculated-section {
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.calculated-section__body {
+    margin-bottom: 20px;
+}
+
+.calculated-section__title {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.calculated-section__input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--light-grayish-cyan);
+    border: 1px solid  var(--light-grayish-cyan);
+}
+
+.calculated-section__people {
+    margin-bottom: 0;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 10px 0;
+    text-align: center;
+    color: var(--grayish-blue);
+}
+
+.attribution a {
+    color: var(--light-slate-blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.attribution a:hover, .attribution a:focus {
+    color: var(--dark-gray-blue);
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) { 
+    .attribution { 
+        padding: 20px;
+    }
+}

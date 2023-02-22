@@ -4,43 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-   .tip-buttons__option::after {
-    content: "%";
-   }
-  </style>
+  <link rel="stylesheet" href="assets/css/colors.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    Bill
-    <input id="bill-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)">
-
-    Select Tip %
-    <div id="tip-buttons">
-        <button class="tip-buttons__option">5</button>
-        <button class="tip-buttons__option">10</button>
-        <button class="tip-buttons__option">15</button>
-        <button class="tip-buttons__option">25</button>
-        <button class="tip-buttons__option">50</button>
-        <input id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
-    </div>
-  
-  
-    <input id="people-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
-
-    <p>Tip/Person: <span id="total-tip"></span></p>
-    <p>Total/Person: <span id="total-grand"></span></p>
-
-    Reset
+    <main class="content">
+        <div class="content-wrapper">
+            <h1 class="page-heading">Spli<br>tier</h1>
+            <div class="main-content">
+                <div class="calculated-section">
+                    <div class="calculated-section__body calculated-section__bill">
+                        <h1 class="calculated-section__title">Bill: </h1>
+                        <input class="calculated-section__input" id="bill-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)">
+                    </div>
+                    <div class="calculated-section__body calculated-section__tip">
+                        <h1 class="calculated-section__title">Select Tip %: </h1>
+                        <div class="calculated-section__option" id="tip-buttons">
+                            <button class="option__button">5</button>
+                            <button class="option__button">10</button>
+                            <button class="option__button">15</button>
+                            <button class="option__button">25</button>
+                            <button class="option__button">50</button>
+                            <input id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="calculated-section__body calculated-section__people">
+                        <h1 class="calculated-section__title">Number of People: </h1>
+                        <input class="calculated-section__input" id="people-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
+                    </div>
+    
+                </div>
+                <div class="total-section">
+                    <div class="total-section__body total-section__tip-amount">
+                        <div class="total-section__title">
+                            <h1>Tip Amount</h1>
+                            <p>/ Person</p>
+                        </div>
+                        <span class="total-section__total" id="total-tip"></span>
+                    </div>
+                    <div class="total-section__body total-section__grand-total">
+                        <div class="total-section__title">
+                            <h1>Total</h1>
+                            <p>/ Person</p>
+                        </div>
+                        <span class="total-section__total" id="total-grand"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
   
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         <br>Coded by <a href="https://tlaksono.my.id/" target="_blank">Tito Laksono</a>.
     </footer>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
