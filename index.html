@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+   .tip-buttons__option::after {
+    content: "%";
+   }
+  </style>
+</head>
+<body>
+    Bill
+    <input id="bill-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)">
+
+    Select Tip %
+    <div id="tip-buttons">
+        <button class="tip-buttons__option">5</button>
+        <button class="tip-buttons__option">10</button>
+        <button class="tip-buttons__option">15</button>
+        <button class="tip-buttons__option">25</button>
+        <button class="tip-buttons__option">50</button>
+        <input id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
+    </div>
+  
+  
+    <input id="people-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
+
+    <p>Tip/Person: <span id="total-tip"></span></p>
+    <p>Total/Person: <span id="total-grand"></span></p>
+
+    Reset
+  
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        <br>Coded by <a href="https://tlaksono.my.id/" target="_blank">Tito Laksono</a>.
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>
