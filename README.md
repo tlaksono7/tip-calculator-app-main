@@ -16,7 +16,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./screenshot.jpg)
 
 ### Links
 
