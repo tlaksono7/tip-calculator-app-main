@@ -22,23 +22,27 @@
             <div class="main-content">
                 <div class="calculated-section">
                     <div class="calculated-section__body calculated-section__bill">
-                        <h1 class="calculated-section__title">Bill: </h1>
-                        <input class="calculated-section__input" id="bill-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)">
+                        <h1 class="calculated-section__title">Bill</h1>
+                        <label class="label-input label-bill">
+                            <input type="text" class="calculated-section__input" id="bill-amount" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" maxlength="12">
+                        </label>
                     </div>
                     <div class="calculated-section__body calculated-section__tip">
-                        <h1 class="calculated-section__title">Select Tip %: </h1>
+                        <h1 class="calculated-section__title">Select Tip %</h1>
                         <div class="calculated-section__option" id="tip-buttons">
                             <button class="option__button">5</button>
                             <button class="option__button">10</button>
                             <button class="option__button">15</button>
                             <button class="option__button">25</button>
                             <button class="option__button">50</button>
-                            <input id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
+                            <input type="text" class="option__button custom-option" id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
                         </div>
                     </div>
                     <div class="calculated-section__body calculated-section__people">
-                        <h1 class="calculated-section__title">Number of People: </h1>
-                        <input class="calculated-section__input" id="people-amount" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
+                        <h1 class="calculated-section__title">Number of People</h1>
+                        <label class="label-input label-people">
+                            <input type="text" class="calculated-section__input" id="people-amount" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
+                        </label>
                     </div>
     
                 </div>
@@ -46,16 +50,19 @@
                     <div class="total-section__body total-section__tip-amount">
                         <div class="total-section__title">
                             <h1>Tip Amount</h1>
-                            <p>/ Person</p>
+                            <p>/ person</p>
                         </div>
-                        <span class="total-section__total" id="total-tip"></span>
+                        <span class="total-section__total" id="total-tip">00.00</span>
                     </div>
                     <div class="total-section__body total-section__grand-total">
                         <div class="total-section__title">
                             <h1>Total</h1>
-                            <p>/ Person</p>
+                            <p>/ person</p>
                         </div>
-                        <span class="total-section__total" id="total-grand"></span>
+                        <span class="total-section__total" id="total-grand">00.00</span>
+                    </div>
+                    <div class="total-section__body total-section__reset">
+                        <a href="#" id="btn-reset" class="btn btn--reset">Reset</a>
                     </div>
                 </div>
             </div>
@@ -66,6 +73,6 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         <br>Coded by <a href="https://tlaksono.my.id/" target="_blank">Tito Laksono</a>.
     </footer>
-  <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
