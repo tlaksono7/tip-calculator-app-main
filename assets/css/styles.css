@@ -104,7 +104,6 @@ label {
     color: var(--very-dark-cyan);
     font-size: 1.5em;
     text-align: right;
-
 }
 
 .calculated-section__input:hover, .calculated-section__input:focus {
@@ -193,7 +192,6 @@ label {
     align-items: center;
 }
 
-
 .total-section__tip-amount {
     margin-top: 15px;
 }
@@ -242,7 +240,11 @@ label {
     text-decoration: none;
 }
 
-.btn--reset:hover, .btn--reset:focus  {
+.btn--reset.active {
+    background-color: var(--light-grayish-cyan);
+}
+
+.btn--reset:hover  {
     background-color: var(--light-grayish-cyan);
 }
 
@@ -253,23 +255,24 @@ label {
     background-color: var(--white);
     padding: 10px 0;
     text-align: center;
-    color: var(--grayish-blue);
+    color: var(--dark-grayish-cyan);
+    font-size: 1em;
 }
 
 .attribution a {
-    color: var(--light-slate-blue);
+    color: var(--very-dark-cyan);
     font-weight: 700;
     text-decoration: none;
 }
 
 .attribution a:hover, .attribution a:focus {
-    color: var(--dark-gray-blue);
+    color: var(--dark-cyan);
     text-decoration: underline;
 }
 
 @media screen and (min-width: 1024px) { 
-    .page-heading {
-        margin-top: 0;
+    .content {
+        margin-bottom: 200px;
     }
 
     .content-wrapper {
@@ -327,3 +330,13 @@ label {
         padding: 20px;
     }
 }
+
+
+@media screen and (min-width: 1441px) { 
+    .page-heading {
+        margin-top: 0;
+    }
+    .content {
+        margin-bottom: 65px;
+    }
+} 

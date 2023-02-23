@@ -10,40 +10,39 @@ const grandTotalPersonEl = document.getElementById("total-grand")
 
 const resetBtn = document.getElementById("btn-reset")
 
+const inputs = document.querySelectorAll("input[type='text']");
+
 let billValue = 0
 let tipValue = 0
 let totalPersonValue = 0
 
 let totalTipPerson = 0
-let GrandTotalPerson = 0
-
-const inputs = document.querySelectorAll("input[type='text']");
+let grandTotalPerson = 0
 
 window.onload = function () {
     resetAll()
     getTipValue()
 }
 
-inputs.forEach(input => {
-    input.addEventListener("input", function() {
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("input", function() {
       validateInputs(inputs);
+      console.log(inputs)
     });
-});
+}
 
 const validateInputs = function(inputs) {
-    const errorDivs = document.querySelectorAll(".error-message");
-    errorDivs.forEach(div => div.remove());
-
-    inputs.forEach(input => {
-        if (input.value === "0") {
+    deleteErrorMessage()
+    for (let i=0; i < inputs.length; i++){
+        if (inputs[i].value === "0") {
             const errorDiv = document.createElement("div");
             errorDiv.classList.add("error-message");
             errorDiv.innerHTML = `Can't be zero`;
 
-            const formContainer = input.closest(".calculated-section__body");
+            const formContainer = inputs[i].closest(".calculated-section__body");
             formContainer.appendChild(errorDiv);
         }
-    });
+    }
 }
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -60,6 +59,10 @@ const getTipValue = function () {
     for (let i=0; i < tipButtonEl.length; i++ ) {
         tipButtonEl[i].addEventListener("click", function() {
             customTipEl.value = ""
+            const errorMessage = tipButtonEl[i].closest('.calculated-section__body').querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
             tipValue = Number(tipButtonEl[i].textContent) * 0.01
             calculateGrandTotalPerson()
             for (j = 0; j < tipButtonEl.length; j++) {
@@ -80,17 +83,27 @@ totalPerson.addEventListener("input", function() {
 })
 
 const calculateGrandTotalPerson =  function () {
-    if (billValue !== 0 && totalPersonValue !== 0) {
+    if (billValue !== 0 && totalPersonValue !== 0 && tipValue !== 0) {
         let totalTip = billValue*tipValue 
         totalTipPerson = totalTip / totalPersonValue
-        GrandTotalPerson = (totalTip+billValue) / totalPersonValue
-
+        grandTotalPerson = (totalTip+billValue) / totalPersonValue
+        
         totalTipPersonEl.textContent = formatter.format(totalTipPerson)
-        grandTotalPersonEl.textContent = formatter.format(GrandTotalPerson)
+        grandTotalPersonEl.textContent = formatter.format(grandTotalPerson)
+        if (totalTipPerson !== 0 && grandTotalPerson !== 0) {
+            resetBtn.classList.add("active")
+        }
     }
 }
 
+resetBtn.addEventListener("click", function() {
+    resetAll()
+})
+
 const resetAll = function () {
+    for (let i=0; i < tipButtonEl.length; i++ ) {
+        tipButtonEl[i].classList.remove("active")
+    }
     totalBill.value = ""
     customTipEl.value = ""
     totalPerson.value = ""
@@ -102,9 +115,14 @@ const resetAll = function () {
     totalPersonValue = 0
 
     totalTipPerson = 0
-    GrandTotalPerson = 0
+    grandTotalPerson = 0
+    resetBtn.classList.remove("active")
+    deleteErrorMessage()
 }
 
-resetBtn.addEventListener("click", function() {
-    resetAll()
-})
+const deleteErrorMessage = function () {
+    const errorDivs = document.querySelectorAll(".error-message");
+    for (let i=0; i < errorDivs.length; i++) {
+        errorDivs[i].remove()
+    }
+}

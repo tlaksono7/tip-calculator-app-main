@@ -24,7 +24,7 @@
                     <div class="calculated-section__body calculated-section__bill">
                         <h1 class="calculated-section__title">Bill</h1>
                         <label class="label-input label-bill">
-                            <input type="text" class="calculated-section__input" id="bill-amount" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" maxlength="12">
+                            <input type="text" class="calculated-section__input" id="bill-amount" placeholder="0" onkeypress="return /[0-9]/.test(event.key) || (event.key === '.' && !event.target.value.includes('.'))" maxlength="12">
                         </label>
                     </div>
                     <div class="calculated-section__body calculated-section__tip">
