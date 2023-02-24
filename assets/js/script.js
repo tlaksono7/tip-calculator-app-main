@@ -45,6 +45,14 @@ const validateInputs = function(inputs) {
     }
 }
 
+const validateNumber = function (input) {
+    input.value = input.value.replace(/[^0-9.]/g, '');
+
+    if (isNaN(parseFloat(input.value))) {
+      input.value = '';
+    }
+}
+
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

@@ -24,7 +24,7 @@
                     <div class="calculated-section__body calculated-section__bill">
                         <h1 class="calculated-section__title">Bill</h1>
                         <label class="label-input label-bill">
-                            <input type="text" class="calculated-section__input" id="bill-amount" placeholder="0" onkeypress="return /[0-9]/.test(event.key) || (event.key === '.' && !event.target.value.includes('.'))" maxlength="12">
+                            <input type="text" class="calculated-section__input" id="bill-amount" placeholder="0" maxlength="12" oninput="validateNumber(this)">
                         </label>
                     </div>
                     <div class="calculated-section__body calculated-section__tip">
@@ -35,13 +35,13 @@
                             <button class="option__button">15</button>
                             <button class="option__button">25</button>
                             <button class="option__button">50</button>
-                            <input type="text" class="option__button custom-option" id="custom-tip" placeholder="Custom" onkeypress="return /[0-9]/i.test(event.key)" maxlength="3">
+                            <input type="text" class="option__button custom-option" id="custom-tip" placeholder="Custom" maxlength="3" oninput="validateNumber(this)" >
                         </div>
                     </div>
                     <div class="calculated-section__body calculated-section__people">
                         <h1 class="calculated-section__title">Number of People</h1>
                         <label class="label-input label-people">
-                            <input type="text" class="calculated-section__input" id="people-amount" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" maxlength="4">
+                            <input type="text" class="calculated-section__input" id="people-amount" placeholder="0" maxlength="4" oninput="validateNumber(this)" >
                         </label>
                     </div>
     
